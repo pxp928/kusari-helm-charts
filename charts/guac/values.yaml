@@ -118,10 +118,10 @@ guac:
     # repository: ghcr.io/guacsec/guac
     # if not set appVersion field from Chart.yaml is used
     # tag: v0.5.0
-    repository: ghcr.io/kusaridev/guacsec/guac
-    tag: issue-1734.sha.0d4652641a3b8a25c987a90519422216e85e3fee
+    repository: ghcr.io/kusaridev/guac
+    tag: issue-1734
     # When digest is set to a non-empty value, images will be pulled by digest (regardless of tag value).
-    digest: ""
+    digest: "sha256:5792129eaf4d558bddcab903e0b5250bd4e56d08cf5e94020003b078db08cdf1"
     pullPolicy: IfNotPresent
     workingDir: /guac
 
@@ -134,7 +134,7 @@ guac:
       AWS_SECRET_ACCESS_KEY: secretKey
 
   ociCollector:
-    enabled: true
+    enabled: false
     name: oci-collector
     annotations:
       reloader.stakater.com/auto: "true"
@@ -146,7 +146,7 @@ guac:
     nodeSelector: {}
 
   depsDevCollector:
-    enabled: true
+    enabled: false
     name: depsdev-collector
     annotations:
       reloader.stakater.com/auto: "true"
@@ -157,7 +157,7 @@ guac:
     nodeSelector: {}
 
   osvCertifier:
-    enabled: true
+    enabled: false
     name: osv-certifier
     annotations:
       reloader.stakater.com/auto: "true"
@@ -168,7 +168,7 @@ guac:
     nodeSelector: {}
 
   ingestor:
-    enabled: true
+    enabled: false
     name: ingestor
     annotations:
       reloader.stakater.com/auto: "true"
@@ -179,7 +179,7 @@ guac:
     nodeSelector: {}
 
   collectSub:
-    enabled: true
+    enabled: false
     name: collectsub
     annotations:
       reloader.stakater.com/auto: "true"
@@ -232,7 +232,7 @@ guac:
     nodeSelector: {}
 
   visualizer:
-    enabled: true
+    enabled: false
     name: visualizer
     annotations:
       reloader.stakater.com/auto: "true"
@@ -306,7 +306,7 @@ guac:
 ## @param nats.exporter.serviceMonitor.namespace String nats service monitor namespace - this is for monitoring purposes and is used by Prometheus
 ## @param nats.exporter.serviceMonitor.labels.release Label to associate nats service monitor with GUAC for monitoring purposes
 nats:
-  enabled: true
+  enabled: false
   nats:
     jetstream:
       enabled: true
@@ -345,7 +345,7 @@ nats:
 ## @param minio.buckets [object] List of buckets to create after deployment.
 ## @param minio.users [object] List of users, in terms of creds and permissions, to create after deployment.?
 minio:
-  enabled: true
+  enabled: false
   replicas: 1
   persistence:
     enabled: false

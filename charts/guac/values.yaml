@@ -121,7 +121,7 @@ guac:
     repository: ghcr.io/kusaridev/guac
     tag: issue-1734
     # When digest is set to a non-empty value, images will be pulled by digest (regardless of tag value).
-    digest: "sha256:5792129eaf4d558bddcab903e0b5250bd4e56d08cf5e94020003b078db08cdf1"
+    digest: sha256:8a454653937addb16c035f9033b13f35df33612b47fb8bf067f57d2e6a41aa5b
     pullPolicy: IfNotPresent
     workingDir: /guac
 
